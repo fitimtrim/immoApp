@@ -1,0 +1,297 @@
+/* ── NAV BASE ── */
+.nav {
+  background: #fff;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  z-index: 400;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  border-bottom: 1px solid #f0ece6;
+  width: 100%;
+}
+
+/* ── LOGO ── */
+.logo {
+  text-decoration: none;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: .2s;
+  margin-right: 20px;
+}
+.logo:hover { opacity: .85; }
+.logoSvg { flex-shrink: 0; }
+.logoText { display: flex; flex-direction: column; gap: 1px; }
+.logoName {
+  font-family: var(--font);
+  font-size: 19px;
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1;
+  letter-spacing: -.3px;
+  white-space: nowrap;
+}
+.logoOrange { color: #ff6b35; }
+.logoTagline {
+  font-size: 10px;
+  color: #888;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ── DESKTOP LINKS ── */
+.links {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  flex: 1;
+}
+.links a {
+  color: #555;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: .2s;
+  white-space: nowrap;
+  display: block;
+}
+.links a:hover { color: #ff6b35; background: #fff8f5; }
+
+/* ── RIGHT SIDE ── */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.langSel {
+  background: transparent;
+  border: 1.5px solid #e8e0d8;
+  color: #555;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  font-family: var(--font);
+}
+.langSel:hover { border-color: #ff6b35; }
+
+.guestBtns, .userBtns { display: flex; align-items: center; gap: 8px; }
+
+.btnGhost {
+  background: transparent;
+  border: 1.5px solid #e8e0d8;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+  white-space: nowrap;
+  font-family: var(--font);
+}
+.btnGhost:hover { border-color: #ff6b35; color: #ff6b35; }
+
+.btnPrimary {
+  background: #ff6b35;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+  white-space: nowrap;
+  font-family: var(--font);
+}
+.btnPrimary:hover { background: #e55a2b; }
+
+.avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: #ff6b35;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+  cursor: pointer; flex-shrink: 0;
+}
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 1.5px solid #e8e0d8;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: .2s;
+}
+.hamburger:hover { border-color: #ff6b35; color: #ff6b35; }
+.hamburgerOpen { border-color: #ff6b35; color: #ff6b35; background: #fff8f5; }
+
+/* ── MOBILE MENU ── */
+.mobileMenu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 350;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border-bottom: 1px solid #f0ece6;
+  animation: slideDown .2s ease;
+  overflow-y: auto;
+  max-height: calc(100vh - 64px);
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  top: 64px;
+  background: rgba(0,0,0,0.3);
+  z-index: 300;
+}
+
+/* Nav links in mobile menu */
+.mobileLinks {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0ece6;
+}
+.mobileLink {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: .15s;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+.mobileLink:hover { background: #fff8f5; color: #ff6b35; }
+
+/* Language in mobile menu */
+.mobileLangSection {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0ece6;
+}
+.mobileLangTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 12px;
+}
+.mobileLangBtns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.mobileLangBtn {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #e8e0d8;
+  background: #fff;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mobileLangBtn:hover { border-color: #ff6b35; color: #ff6b35; }
+.mobileLangActive {
+  background: #fff8f5;
+  border-color: #ff6b35;
+  color: #ff6b35;
+}
+
+/* Auth buttons in mobile menu */
+.mobileAuth {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mobileAuthPrimary {
+  width: 100%;
+  padding: 13px;
+  background: #ff6b35;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s;
+  text-align: center;
+}
+.mobileAuthPrimary:hover { background: #e55a2b; }
+.mobileAuthGhost {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  color: #555;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  border: 1.5px solid #e8e0d8;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s;
+  text-align: center;
+}
+.mobileAuthGhost:hover { border-color: #ff6b35; color: #ff6b35; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .links { display: none; }
+  .hamburger { display: flex; }
+  .langSel { display: none; }
+  .guestBtns { display: none; }
+  .userBtns { display: none; }
+  .nav { padding: 0 16px; height: 60px; }
+}
+
+@media (max-width: 480px) {
+  .nav { padding: 0 14px; height: 56px; }
+  .logoName { font-size: 17px; }
+  .logoTagline { display: none; }
+  .logoSvg { width: 30px; height: 30px; }
+  .mobileMenu { top: 56px; max-height: calc(100vh - 56px); }
+  .backdrop { top: 56px; }
+}

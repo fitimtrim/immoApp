@@ -1,0 +1,51 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --c1: #1a1a2e;
+  --c2: #2d2d4e;
+  --c3: #ff6b35;
+  --c4: #e55a2b;
+  --orange: #ff6b35;
+  --teal: #ff6b35;
+  --ca: #ff6b35;
+  --cw: #faf9f7;
+  --cr: #fff8f5;
+  --text: #1a1a2e;
+  --muted: #888;
+  --card: #ffffff;
+  --border: rgba(0,0,0,0.08);
+  --r: 14px;
+  --rs: 10px;
+  --sh: 0 4px 24px rgba(0,0,0,0.08);
+  --font: 'Sora', sans-serif;
+  --serif: 'DM Serif Display', serif;
+  --nav: 64px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--text); background: var(--cw); font-size: 14px; line-height: 1.5; min-height: 100vh; }
+input, select, textarea, button { font-family: var(--font); }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: rgba(255,107,53,0.3); border-radius: 3px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes modalIn { from { opacity: 0; transform: scale(0.96) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+/* ── iOS ZOOM FIX – prevents auto-zoom on input focus ── */
+input, select, textarea {
+  font-size: 16px !important;
+}
+/* But keep visual size normal with transform */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ── iOS Auto-Zoom Prevention ── */
+/* iOS zooms when input font-size < 16px */
+input, select, textarea {
+  font-size: 16px !important;
+}
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
